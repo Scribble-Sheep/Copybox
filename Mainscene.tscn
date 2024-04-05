@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckfaab762ijsb"]
+
+[ext_resource type="Script" path="res://TabBar.gd" id="1_c0t2p"]
+[ext_resource type="Script" path="res://CopyablesBox.gd" id="1_jnc58"]
+
+[node name="Root" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabBar" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c0t2p")
+
+[node name="Setup" type="VBoxContainer" parent="TabBar"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabBar/Setup"]
+layout_mode = 2
+text = "Delimiter"
+
+[node name="DelimitEdit" type="LineEdit" parent="TabBar/Setup"]
+layout_mode = 2
+
+[node name="Raw Text" type="MarginContainer" parent="TabBar/Setup"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 46
+
+[node name="TextEdit" type="TextEdit" parent="TabBar/Setup/Raw Text"]
+layout_mode = 2
+text = "testsldkjsfdlskj"
+
+[node name="InitButton" type="Button" parent="TabBar/Setup"]
+custom_minimum_size = Vector2(145, 30)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Initialize Copybox"
+
+[node name="Copiables" type="ScrollContainer" parent="TabBar"]
+visible = false
+layout_mode = 2
+
+[node name="CopyablesBox" type="VBoxContainer" parent="TabBar/Copiables"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_jnc58")
+
+[connection signal="pressed" from="TabBar/Setup/InitButton" to="TabBar" method="_on_initbutton_pressed"]

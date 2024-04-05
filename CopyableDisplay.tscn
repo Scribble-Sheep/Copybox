@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxc8iaieogphq"]
+[gd_scene load_steps=2 format=3 uid="uid://bkalgjjphsgl6"]
 
-[ext_resource type="Script" path="res://CopyableDisplay.gd" id="1_besuj"]
+[ext_resource type="Script" path="res://CopyableDisplay.gd" id="1_ig0vi"]
 
-[node name="CopyableDisplay" type="MarginContainer"]
+[node name="Control" type="MarginContainer"]
 custom_minimum_size = Vector2(0, 52)
 anchors_preset = 10
 anchor_right = 1.0
@@ -13,7 +13,7 @@ theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 4
-script = ExtResource("1_besuj")
+script = ExtResource("1_ig0vi")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2

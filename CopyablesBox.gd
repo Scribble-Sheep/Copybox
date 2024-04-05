@@ -12,6 +12,6 @@ func _on_initialize(inString:String, delimiter:String)->void:
 	if !inStringArr is Array and inStringArr.size()==0:
 		return
 	
-	for str in inStringArr:
-		var newchild:CopyableDisplay = CopyableDisplay.create_display(str)
+	for s in inStringArr:
+		var newchild:CopyableDisplay = CopyableDisplay.create_display(s)
 		add_child(newchild)

@@ -33,7 +33,7 @@ text = "Delimeter"
 unique_name_in_owner = true
 layout_mode = 2
 text = ","
-placeholder_text = "Leaving Delimiter off will treat newline as the delimiter."
+placeholder_text = "Leaving Delimiter enabled and empty will treat newline as the delimiter."
 editable = false
 clear_button_enabled = true
 

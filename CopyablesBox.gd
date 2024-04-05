@@ -15,7 +15,7 @@ func _on_initialize(inString:String, delimiter:String)->void:
 	
 	match delimiter:
 		"":
-			inStringArr = [inString]
+			inStringArr = inString.split("\n", false)
 		_:
 			inStringArr = inString.split(delimiter, false)
 	

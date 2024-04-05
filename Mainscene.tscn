@@ -29,7 +29,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Delimeter"
+text = "Use Delimeter Character"
 
 [node name="DelimitEdit" type="LineEdit" parent="TabBar/Setup"]
 unique_name_in_owner = true

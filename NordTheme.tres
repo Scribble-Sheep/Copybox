@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=13 format=3 uid="uid://pxj46erdn668"]
 
 [ext_resource type="StyleBox" uid="uid://cbt5wwsiulcyo" path="res://Nord_Text_Panel.tres" id="1_bet28"]
-[ext_resource type="SystemFont" uid="uid://duoi8yke4myd5" path="res://comicsans.tres" id="1_o26fg"]
+[ext_resource type="SystemFont" uid="uid://duoi8yke4myd5" path="res://UsedFont.tres" id="1_o26fg"]
 [ext_resource type="StyleBox" uid="uid://dm765bv3uk3g3" path="res://Nord_Disabled_Panel.tres" id="2_05vl6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xjs4p"]
@@ -59,6 +59,7 @@ CheckBox/colors/font_hover_pressed_color = Color(0.847059, 0.870588, 0.913725, 1
 CheckBox/colors/font_outline_color = Color(0.847059, 0.870588, 0.913725, 1)
 CheckBox/colors/font_pressed_color = Color(0.847059, 0.870588, 0.913725, 1)
 CheckBox/fonts/font = ExtResource("1_o26fg")
+CheckBox/styles/focus = ExtResource("2_05vl6")
 CheckBox/styles/hover = ExtResource("2_05vl6")
 CheckBox/styles/hover_pressed = ExtResource("2_05vl6")
 CheckBox/styles/normal = ExtResource("2_05vl6")

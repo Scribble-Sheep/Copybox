@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://LabeledCopyableDisplay.gd" id="1_s24os"]
 [ext_resource type="Texture2D" uid="uid://c2j0wda35t2mx" path="res://nineslice.png" id="2_ohrsc"]
-[ext_resource type="SystemFont" uid="uid://duoi8yke4myd5" path="res://comicsans.tres" id="3_4rdug"]
+[ext_resource type="SystemFont" uid="uid://duoi8yke4myd5" path="res://UsedFont.tres" id="3_nyxqe"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wxrxw"]
 blend_mode = 3
@@ -39,10 +39,8 @@ bg_color = Color(0.368627, 0.505882, 0.67451, 0.501961)
 
 [sub_resource type="LabelSettings" id="LabelSettings_6p40s"]
 line_spacing = 0.0
-font = ExtResource("3_4rdug")
-font_size = 25
+font = ExtResource("3_nyxqe")
 font_color = Color(0.847059, 0.870588, 0.913725, 1)
-outline_size = 10
 outline_color = Color(0, 0, 0, 0.690196)
 
 [node name="Control" type="MarginContainer"]
@@ -129,6 +127,7 @@ label_settings = SubResource("LabelSettings_6p40s")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+clip_text = true
 
 [node name="Control" type="Control" parent="HBoxContainer"]
 custom_minimum_size = Vector2(29.315, 0)

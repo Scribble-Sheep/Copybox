@@ -1,5 +1,6 @@
 extends VBoxContainer
 
+var displaybox := preload("res://LabeledCopyableDisplay.tscn")
 @onready var strip_toggle = %StripToggle
 
 func _ready()-> void:
@@ -24,5 +25,6 @@ func _on_initialize(inString:String, delimiter:String)->void:
 	for s in inStringArr:
 		if strip_toggle.button_pressed:
 			s = s.strip_edges()
-		var newchild:LabeledCopyableDisplay = LabeledCopyableDisplay.create_display(s)
+		var newchild:= displaybox.instantiate()
 		add_child(newchild)
+		newchild.initialize(s)

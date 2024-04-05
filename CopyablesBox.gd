@@ -13,5 +13,5 @@ func _on_initialize(inString:String, delimiter:String)->void:
 		return
 	
 	for s in inStringArr:
-		var newchild:CopyableDisplay = CopyableDisplay.create_display(s)
+		var newchild:LabeledCopyableDisplay = LabeledCopyableDisplay.create_display(s)
 		add_child(newchild)

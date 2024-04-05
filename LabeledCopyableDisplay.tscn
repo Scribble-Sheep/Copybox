@@ -1,0 +1,140 @@
+[gd_scene load_steps=13 format=3 uid="uid://cy5i7w3smd0rh"]
+
+[ext_resource type="Script" path="res://LabeledCopyableDisplay.gd" id="1_s24os"]
+[ext_resource type="Texture2D" uid="uid://c2j0wda35t2mx" path="res://nineslice.png" id="2_ohrsc"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wxrxw"]
+blend_mode = 3
+light_mode = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_voft3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vr0sc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pw1ob"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n8mu3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_weyr4"]
+
+[sub_resource type="Theme" id="Theme_hca64"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_voft3")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_vr0sc")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_pw1ob")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_n8mu3")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_weyr4")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xoqyf"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ftaq6"]
+font_color = Color(1, 1, 1, 0.372549)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6p40s"]
+outline_size = 13
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 15
+shadow_color = Color(0, 0, 0, 0.388235)
+
+[node name="Control" type="MarginContainer"]
+custom_minimum_size = Vector2(0, 52)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 52.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+script = ExtResource("1_s24os")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Display" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Vignette" type="NinePatchRect" parent="HBoxContainer/Display"]
+material = SubResource("CanvasItemMaterial_wxrxw")
+layout_mode = 2
+offset_right = 1103.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture = ExtResource("2_ohrsc")
+patch_margin_left = 3
+patch_margin_top = 5
+patch_margin_right = 3
+patch_margin_bottom = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/Display/Vignette"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_hca64")
+theme_override_styles/panel = SubResource("StyleBoxFlat_xoqyf")
+
+[node name="CopyLabel" type="Label" parent="HBoxContainer/Display/Vignette/ScrollContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(8.92, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "test text for thtelkjd lsest sdfkjsdf sdlfkjsdf"
+label_settings = SubResource("LabelSettings_ftaq6")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="CopyButton" type="Button" parent="HBoxContainer/Display/Vignette/ScrollContainer/CopyLabel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+mouse_filter = 1
+flat = true
+
+[node name="TitleLabel" type="Label" parent="HBoxContainer/Display"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "copy."
+label_settings = SubResource("LabelSettings_6p40s")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(29.315, 0)
+layout_mode = 2
+
+[node name="Closebutton" type="Button" parent="HBoxContainer/Control"]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "X"
+
+[connection signal="pressed" from="HBoxContainer/Display/Vignette/ScrollContainer/CopyLabel/CopyButton" to="." method="_on_copybutton_pressed"]
+[connection signal="pressed" from="HBoxContainer/Control/Closebutton" to="." method="_on_closebutton_pressed"]

@@ -23,12 +23,18 @@ script = ExtResource("1_c0t2p")
 [node name="Setup" type="VBoxContainer" parent="TabBar"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabBar/Setup"]
+[node name="DelimeterToggle" type="CheckButton" parent="TabBar/Setup"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Delimiter"
+size_flags_horizontal = 0
+text = "Delimeter"
 
 [node name="DelimitEdit" type="LineEdit" parent="TabBar/Setup"]
+unique_name_in_owner = true
 layout_mode = 2
+placeholder_text = "Leaving Delimiter off will treat newline as the delimiter."
+editable = false
+clear_button_enabled = true
 
 [node name="Raw Text" type="MarginContainer" parent="TabBar/Setup"]
 layout_mode = 2
@@ -39,14 +45,29 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 46
 
-[node name="TextEdit" type="TextEdit" parent="TabBar/Setup/Raw Text"]
+[node name="Textblob" type="TextEdit" parent="TabBar/Setup/Raw Text"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "testsldkjsfdlskj"
 
-[node name="InitButton" type="Button" parent="TabBar/Setup"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabBar/Setup"]
+layout_mode = 2
+
+[node name="StripToggle" type="CheckBox" parent="TabBar/Setup/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+text = "Strip Edges"
+
+[node name="TitlesToggle" type="CheckBox" parent="TabBar/Setup/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Use Titles (WIP)"
+
+[node name="InitButton" type="Button" parent="TabBar/Setup/HBoxContainer"]
 custom_minimum_size = Vector2(145, 30)
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 10
 size_flags_vertical = 8
 text = "Initialize Copybox"
 
@@ -59,4 +80,5 @@ layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("1_jnc58")
 
-[connection signal="pressed" from="TabBar/Setup/InitButton" to="TabBar" method="_on_initbutton_pressed"]
+[connection signal="toggled" from="TabBar/Setup/DelimeterToggle" to="TabBar" method="_on_delimeter_toggle_toggled"]
+[connection signal="pressed" from="TabBar/Setup/HBoxContainer/InitButton" to="TabBar" method="_on_initbutton_pressed"]

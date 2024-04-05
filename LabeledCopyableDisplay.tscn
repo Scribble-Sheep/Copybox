@@ -31,10 +31,10 @@ bg_color = Color(0.117647, 0.117647, 0.117647, 1)
 font_color = Color(1, 1, 1, 0.372549)
 
 [sub_resource type="LabelSettings" id="LabelSettings_6p40s"]
-outline_size = 13
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 15
-shadow_color = Color(0, 0, 0, 0.388235)
+font_size = 25
+font_color = Color(1, 1, 1, 0.439216)
+outline_size = 10
+outline_color = Color(0, 0, 0, 0.439216)
 
 [node name="Control" type="MarginContainer"]
 custom_minimum_size = Vector2(0, 52)
@@ -92,7 +92,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "test text for thtelkjd lsest sdfkjsdf sdlfkjsdf"
 label_settings = SubResource("LabelSettings_ftaq6")
-horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="CopyButton" type="Button" parent="HBoxContainer/Display/Vignette/ScrollContainer/CopyLabel"]

@@ -1,16 +1,25 @@
 extends TabContainer
 
 
-@onready var raw_text := $"Setup/Raw Text/TextEdit"
-@onready var delimiter_edit := $Setup/DelimitEdit
+@onready var raw_text := %Textblob
+@onready var delimeter_toggle := %DelimeterToggle
+@onready var delimiter_edit := %DelimitEdit
 
 
 func _on_initbutton_pressed() -> void:
 	if raw_text.text == "":
 		return
 	current_tab +=1
-	match delimiter_edit.text:
-		"":
-			EventBus.initialize.emit(raw_text.text, "\n")
-		_:
-			EventBus.initialize.emit(raw_text.text, delimiter_edit.text)
+	
+	var delimit:String
+	
+	if !delimeter_toggle.button_pressed:
+		delimit = "\n"
+	else:
+		delimit = delimiter_edit.text
+
+	EventBus.initialize.emit(raw_text.text, delimit)
+
+
+func _on_delimeter_toggle_toggled(toggled_on: bool) -> void:
+	delimiter_edit.editable = toggled_on

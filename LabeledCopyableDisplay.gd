@@ -22,7 +22,7 @@ func _ready() -> void:
 
 
 func _on_closebutton_pressed() -> void:
-	EventBus.attempt_close_display.emit(self)
+	queue_free()
 
 
 func _on_copybutton_pressed() -> void:

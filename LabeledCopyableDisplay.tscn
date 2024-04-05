@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cy5i7w3smd0rh"]
+[gd_scene load_steps=15 format=3 uid="uid://cy5i7w3smd0rh"]
 
 [ext_resource type="Script" path="res://LabeledCopyableDisplay.gd" id="1_s24os"]
 [ext_resource type="Texture2D" uid="uid://c2j0wda35t2mx" path="res://nineslice.png" id="2_ohrsc"]
+[ext_resource type="SystemFont" uid="uid://duoi8yke4myd5" path="res://comicsans.tres" id="3_4rdug"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wxrxw"]
 blend_mode = 3
@@ -25,16 +26,24 @@ VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_n8mu3")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_weyr4")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xoqyf"]
-bg_color = Color(0.117647, 0.117647, 0.117647, 1)
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color(0.180392, 0.203922, 0.25098, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ftaq6"]
 font_color = Color(1, 1, 1, 0.372549)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhoix"]
+content_margin_left = 8.0
+bg_color = Color(0.368627, 0.505882, 0.67451, 0.501961)
+
 [sub_resource type="LabelSettings" id="LabelSettings_6p40s"]
+line_spacing = 0.0
+font = ExtResource("3_4rdug")
 font_size = 25
-font_color = Color(1, 1, 1, 0.439216)
+font_color = Color(0.847059, 0.870588, 0.913725, 1)
 outline_size = 10
-outline_color = Color(0, 0, 0, 0.439216)
+outline_color = Color(0, 0, 0, 0.690196)
 
 [node name="Control" type="MarginContainer"]
 custom_minimum_size = Vector2(0, 52)
@@ -104,6 +113,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.25
 mouse_filter = 1
+theme_override_styles/focus = SubResource("StyleBoxFlat_nhoix")
 flat = true
 
 [node name="TitleLabel" type="Label" parent="HBoxContainer/Display"]
@@ -127,13 +137,15 @@ layout_mode = 2
 [node name="Closebutton" type="Button" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(0, 31)
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 31.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 text = "X"
+alignment = 0
 
 [connection signal="pressed" from="HBoxContainer/Display/Vignette/ScrollContainer/CopyLabel/CopyButton" to="." method="_on_copybutton_pressed"]
 [connection signal="pressed" from="HBoxContainer/Control/Closebutton" to="." method="_on_closebutton_pressed"]

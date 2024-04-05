@@ -1,0 +1,99 @@
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://pxj46erdn668"]
+
+[ext_resource type="StyleBox" uid="uid://cbt5wwsiulcyo" path="res://Nord_Text_Panel.tres" id="1_bet28"]
+[ext_resource type="SystemFont" uid="uid://duoi8yke4myd5" path="res://comicsans.tres" id="1_o26fg"]
+[ext_resource type="StyleBox" uid="uid://dm765bv3uk3g3" path="res://Nord_Disabled_Panel.tres" id="2_05vl6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xjs4p"]
+content_margin_left = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xin8j"]
+bg_color = Color(0.560784, 0.737255, 0.733333, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c2n2l"]
+bg_color = Color(0.560784, 0.737255, 0.733333, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_asb7t"]
+bg_color = Color(0.180392, 0.203922, 0.25098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ttde"]
+bg_color = Color(0.180392, 0.203922, 0.25098, 0)
+border_width_left = 3
+border_width_right = 3
+border_color = Color(0.180392, 0.203922, 0.25098, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k5ynm"]
+bg_color = Color(0.180392, 0.203922, 0.25098, 1)
+border_width_left = 3
+border_width_right = 3
+border_color = Color(0.180392, 0.203922, 0.25098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0t7rb"]
+bg_color = Color(0.109804, 0.121569, 0.14902, 1)
+border_width_left = 3
+border_width_right = 3
+border_color = Color(0.109804, 0.121569, 0.14902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u10ae"]
+bg_color = Color(0, 0, 0, 0.34902)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ecgcp"]
+
+[resource]
+Button/colors/font_color = Color(0.847059, 0.870588, 0.913725, 1)
+Button/colors/font_focus_color = Color(0.847059, 0.870588, 0.913725, 1)
+Button/colors/font_hover_color = Color(0.847059, 0.870588, 0.913725, 1)
+Button/colors/font_hover_pressed_color = Color(0.847059, 0.870588, 0.913725, 1)
+Button/colors/font_outline_color = Color(0.847059, 0.870588, 0.913725, 1)
+Button/colors/font_pressed_color = Color(0.847059, 0.870588, 0.913725, 1)
+Button/fonts/font = ExtResource("1_o26fg")
+Button/styles/disabled = ExtResource("2_05vl6")
+Button/styles/focus = ExtResource("1_bet28")
+Button/styles/hover = ExtResource("1_bet28")
+Button/styles/normal = ExtResource("1_bet28")
+Button/styles/pressed = ExtResource("2_05vl6")
+CheckBox/colors/font_color = Color(0.847059, 0.870588, 0.913725, 1)
+CheckBox/colors/font_focus_color = Color(0.847059, 0.870588, 0.913725, 1)
+CheckBox/colors/font_hover_color = Color(0.847059, 0.870588, 0.913725, 1)
+CheckBox/colors/font_hover_pressed_color = Color(0.847059, 0.870588, 0.913725, 1)
+CheckBox/colors/font_outline_color = Color(0.847059, 0.870588, 0.913725, 1)
+CheckBox/colors/font_pressed_color = Color(0.847059, 0.870588, 0.913725, 1)
+CheckBox/fonts/font = ExtResource("1_o26fg")
+CheckBox/styles/hover = ExtResource("2_05vl6")
+CheckBox/styles/hover_pressed = ExtResource("2_05vl6")
+CheckBox/styles/normal = ExtResource("2_05vl6")
+CheckButton/colors/font_color = Color(0.847059, 0.870588, 0.913725, 1)
+CheckButton/colors/font_focus_color = Color(0.847059, 0.870588, 0.913725, 1)
+CheckButton/colors/font_hover_color = Color(0.847059, 0.870588, 0.913725, 1)
+CheckButton/colors/font_hover_pressed_color = Color(0.847059, 0.870588, 0.913725, 1)
+CheckButton/colors/font_outline_color = Color(0.847059, 0.870588, 0.913725, 1)
+CheckButton/colors/font_pressed_color = Color(0.847059, 0.870588, 0.913725, 1)
+CheckButton/fonts/font = ExtResource("1_o26fg")
+CheckButton/styles/focus = ExtResource("2_05vl6")
+CheckButton/styles/hover = ExtResource("2_05vl6")
+CheckButton/styles/hover_pressed = ExtResource("2_05vl6")
+CheckButton/styles/normal = ExtResource("2_05vl6")
+CheckButton/styles/pressed = ExtResource("2_05vl6")
+Label/colors/font_color = Color(0.847059, 0.870588, 0.913725, 1)
+Label/colors/font_outline_color = Color(0.847059, 0.870588, 0.913725, 1)
+Label/fonts/font = ExtResource("1_o26fg")
+LineEdit/colors/caret_color = Color(0.847059, 0.870588, 0.913725, 1)
+LineEdit/colors/font_color = Color(0.847059, 0.870588, 0.913725, 1)
+LineEdit/colors/font_outline_color = Color(0.847059, 0.870588, 0.913725, 1)
+LineEdit/colors/font_selected_color = Color(0.847059, 0.870588, 0.913725, 1)
+LineEdit/colors/selection_color = Color(0.262745, 0.298039, 0.368627, 1)
+LineEdit/fonts/font = ExtResource("1_o26fg")
+LineEdit/styles/focus = ExtResource("1_bet28")
+LineEdit/styles/normal = ExtResource("1_bet28")
+LineEdit/styles/read_only = SubResource("StyleBoxEmpty_xjs4p")
+TabBar/styles/button_highlight = SubResource("StyleBoxFlat_xin8j")
+TabBar/styles/tab_selected = SubResource("StyleBoxFlat_c2n2l")
+TabContainer/styles/panel = SubResource("StyleBoxFlat_asb7t")
+TabContainer/styles/tab_focus = SubResource("StyleBoxFlat_0ttde")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_0ttde")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_k5ynm")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_0t7rb")
+TabContainer/styles/tabbar_background = SubResource("StyleBoxFlat_u10ae")
+TextEdit/styles/focus = ExtResource("1_bet28")
+TextEdit/styles/normal = ExtResource("1_bet28")
+TextEdit/styles/read_only = SubResource("StyleBoxEmpty_ecgcp")

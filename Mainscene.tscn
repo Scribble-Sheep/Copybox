@@ -48,7 +48,6 @@ theme_override_constants/margin_bottom = 46
 [node name="Textblob" type="TextEdit" parent="TabBar/Setup/Raw Text"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "testsldkjsfdlskj"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabBar/Setup"]
 layout_mode = 2

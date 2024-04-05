@@ -58,18 +58,21 @@ layout_mode = 2
 [node name="StripToggle" type="CheckBox" parent="TabBar/Setup/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+tooltip_text = "Removes any newlines at the starts and ends of each copyable. Useful if you want to use delimiters."
 button_pressed = true
 text = "Strip Edges"
 
 [node name="TitlesToggle" type="CheckBox" parent="TabBar/Setup/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+tooltip_text = "If enabled, every odd numbered copyable will be treated as the title to the next one. Just try it out, you'll see what I mean."
 text = "Use Titles"
 script = ExtResource("2_8mpku")
 
 [node name="FlipToggle" type="CheckBox" parent="TabBar/Setup/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+tooltip_text = "Did you write them out in reverse? Here, no need to rewrite things."
 disabled = true
 text = "Flip Title/Content"
 

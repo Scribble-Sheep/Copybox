@@ -103,13 +103,16 @@ autowrap_mode = 3
 
 [node name="CopyButton" type="Button" parent="HBoxContainer/Display/Vignette/ScrollContainer/CopyLabel"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.25
+tooltip_text = "Click here to copy this copyable's content to your clipboard."
 mouse_filter = 1
 theme_override_styles/focus = SubResource("StyleBoxFlat_nhoix")
 flat = true
@@ -143,6 +146,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+tooltip_text = "Remove this copyable.
+Will NOT remove the matching text from the setup tab!"
 text = "X"
 alignment = 0
 

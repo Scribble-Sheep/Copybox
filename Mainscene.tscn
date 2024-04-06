@@ -22,11 +22,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 2
 script = ExtResource("1_c0t2p")
 
 [node name="Setup" type="VBoxContainer" parent="TabBar"]
-visible = false
 layout_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="TabBar/Setup"]
@@ -127,6 +125,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="FAQ" type="ScrollContainer" parent="TabBar"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 

@@ -3,7 +3,7 @@ A "copiable" (or, copyable. I'm not consistant.) is simply what I call a button 
 The Copiables tab will contain an array of them once you have some initialized.<br>
 
 <b>== The contents are kinda hard to read, what's with the vignette? ==</b><br>
-The vignette is there because it was easier on my eyes when there's a lot of copiabls. But, you can label them!<br>
+The vignette is there because it was easier on my eyes when there's a lot of copiables. But, you can label them!<br>
 Simply tick the \"Use Titles\" checkbox on, and the COPY will be replaced with every other text block.<br>
 It...it makes more sense if you play around with it, trust me.<br>
 

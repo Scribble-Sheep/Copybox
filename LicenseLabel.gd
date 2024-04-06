@@ -3,8 +3,9 @@ extends Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	text = "Copybox Version 1.0\n\n"
-	text +="This program was created by Sheep Undefined, aka Scribble-Sheep, using Godot %s.%s.%s.\n\n"%[Engine.get_version_info().major,Engine.get_version_info().minor,Engine.get_version_info().patch]
+	text = "Copybox Version 1.0.1,\nCopybox© 2024 by Sheep Undefined is licensed under CC BY-NC-SA 4.0\n"
+	text +="Created using Godot %s.%s.%s.\n\n"%[Engine.get_version_info().major,Engine.get_version_info().minor,Engine.get_version_info().patch]
+	text += "Utilizes the Nord Color Pallete from Arctic Ice Studio."
 	text += "This game uses Godot Engine, available under the following license:\n"
 	text += Engine.get_license_text()
 	text += "\n\nPortions of this software are copyright ©%s The FreeType Project (www.freetype.org). All rights reserved.\n\n"%"2023"

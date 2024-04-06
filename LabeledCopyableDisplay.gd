@@ -13,6 +13,10 @@ func initialize(new_copy_string:String, new_name_string:= "COPY")-> void:
 	name_label.text = new_name_string
 
 
+func remove_close_button()-> void:
+	%Closebutton.queue_free()
+
+
 func _on_closebutton_pressed() -> void:
 	queue_free()
 

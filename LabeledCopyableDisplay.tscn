@@ -135,8 +135,11 @@ clip_text = true
 [node name="Control" type="Control" parent="HBoxContainer"]
 custom_minimum_size = Vector2(29.315, 0)
 layout_mode = 2
+size_flags_horizontal = 10
+size_flags_stretch_ratio = 0.0
 
 [node name="Closebutton" type="Button" parent="HBoxContainer/Control"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 31)
 layout_mode = 1
 anchors_preset = 15

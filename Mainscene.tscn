@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckfaab762ijsb"]
+[gd_scene load_steps=6 format=3 uid="uid://ckfaab762ijsb"]
 
 [ext_resource type="Script" path="res://TabBar.gd" id="1_c0t2p"]
 [ext_resource type="Script" path="res://CopyablesBox.gd" id="1_jnc58"]
 [ext_resource type="Script" path="res://TitlesToggle.gd" id="2_8mpku"]
+[ext_resource type="Script" path="res://OnTopToggle.gd" id="4_ihvxv"]
+[ext_resource type="Script" path="res://LicenseLabel.gd" id="5_k422d"]
 
 [node name="Root" type="Control"]
 layout_mode = 3
@@ -20,16 +22,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
+current_tab = 2
 script = ExtResource("1_c0t2p")
 
 [node name="Setup" type="VBoxContainer" parent="TabBar"]
+visible = false
 layout_mode = 2
 
-[node name="DelimeterToggle" type="CheckButton" parent="TabBar/Setup"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabBar/Setup"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="DelimeterToggle" type="CheckButton" parent="TabBar/Setup/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Use Delimeter Character"
+flat = true
+
+[node name="OnTopToggle" type="CheckBox" parent="TabBar/Setup/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 10
+text = "Always On Top"
+flat = true
+alignment = 1
+script = ExtResource("4_ihvxv")
 
 [node name="DelimitEdit" type="LineEdit" parent="TabBar/Setup"]
 unique_name_in_owner = true
@@ -46,7 +64,7 @@ mouse_filter = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 46
+theme_override_constants/margin_bottom = 19
 
 [node name="Textblob" type="TextEdit" parent="TabBar/Setup/Raw Text"]
 unique_name_in_owner = true
@@ -54,6 +72,7 @@ layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabBar/Setup"]
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="StripToggle" type="CheckBox" parent="TabBar/Setup/HBoxContainer"]
 unique_name_in_owner = true
@@ -61,12 +80,14 @@ layout_mode = 2
 tooltip_text = "Removes any newlines at the starts and ends of each copyable. Useful if you want to use delimiters."
 button_pressed = true
 text = "Strip Edges"
+flat = true
 
 [node name="TitlesToggle" type="CheckBox" parent="TabBar/Setup/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "If enabled, every odd numbered copyable will be treated as the title to the next one. Just try it out, you'll see what I mean."
 text = "Use Titles"
+flat = true
 script = ExtResource("2_8mpku")
 
 [node name="FlipToggle" type="CheckBox" parent="TabBar/Setup/HBoxContainer"]
@@ -75,8 +96,9 @@ layout_mode = 2
 tooltip_text = "Did you write them out in reverse? Here, no need to rewrite things."
 disabled = true
 text = "Flip Title/Content"
+flat = true
 
-[node name="InitButton" type="Button" parent="TabBar/Setup/HBoxContainer"]
+[node name="InitButton" type="Button" parent="TabBar/Setup"]
 custom_minimum_size = Vector2(145, 30)
 layout_mode = 2
 size_flags_horizontal = 10
@@ -90,8 +112,77 @@ layout_mode = 2
 [node name="CopyablesBox" type="VBoxContainer" parent="TabBar/Copiables"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_jnc58")
 
-[connection signal="toggled" from="TabBar/Setup/DelimeterToggle" to="TabBar" method="_on_delimeter_toggle_toggled"]
+[node name="Label" type="Label" parent="TabBar/Copiables/CopyablesBox"]
+custom_minimum_size = Vector2(4.595, 0.335)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+text = "It looks like you don't have any copiables yet!
+To get started, click \"Setup\" tab up there and type in some things you want to make copiables for, or choose the \"FAQ\" tab for more help."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="FAQ" type="ScrollContainer" parent="TabBar"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FAQLabel" type="RichTextLabel" parent="TabBar/FAQ"]
+custom_minimum_size = Vector2(4.595, 0.335)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[center][b]== What's a copiable? ==[/b]
+A \"copiable\" (or, copyable. I'm not consistant.) is simply what I call a button that, when clicked, will copy its contents to your clipboard.
+The Copiables tab will contain an array of them once you have some initialized.
+
+[b]== The contents are kinda hard to read, what's with the vignette? ==[/b]
+The vignette is there because it was easier on my eyes when there's a lot of copiabls. But, you can label them!
+Simply tick the \"Use Titles\" checkbox on, and the COPY will be replaced with every other text block.
+It...it makes more sense if you play around with it, trust me.
+
+[b]== What if I want to save my copyables? ==[/b]
+You'd have to just save the input text to a text file, sorry!
+At some point I might allow the copyable array to be saved to a file w/the delimeter and such, but for now, it's low priority for me.
+
+[b]== The settings all reset when I close the app. ==[/b]
+Atm I don't have a saving system for that either, though given there's only a few options available, it's also kinda low priority.
+
+[b]== EW, WHY IS EVERYTHING IN COMIC SANS?! ==[/b]
+So, this is really just a tool I made for myself and decided to put out there for other people who may use it.
+Given that I find comic sans to be one of the few fonts I can parse easily it's just...what I set it to.
+
+[b]== Can I change the font? ==[/b]
+At some point I might make an option to change the font, but for now, well...this project is open source, and Godot is free.
+If you have Godot downloaded yourself, (Check the About tab for the version number!)
+you can simply open up the UsedFont.tres file, change it to your desired font, and compile your own version.
+
+[b]== Have you heard of [Insert dyslexic friendly font here]? ==[/b]
+Every time someone learns I use Comic Sans for legibility, they recommend me a new font, and trust me. I've tried most of the stuff out there!
+Comic Sans remains the only font I've found that works well for me, and some of the fonts I've been recommended are actually HARDER for me to read. I'm perfectly fine with using it, honest![/center]
+"
+
+[node name="About" type="ScrollContainer" parent="TabBar"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LicenseLabel" type="Label" parent="TabBar/About"]
+custom_minimum_size = Vector2(4.595, 0.335)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+text = "Error, could not load license. Oh no!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("5_k422d")
+
+[connection signal="toggled" from="TabBar/Setup/HBoxContainer2/DelimeterToggle" to="TabBar" method="_on_delimeter_toggle_toggled"]
+[connection signal="toggled" from="TabBar/Setup/HBoxContainer2/OnTopToggle" to="TabBar/Setup/HBoxContainer2/OnTopToggle" method="_on_toggled"]
 [connection signal="toggled" from="TabBar/Setup/HBoxContainer/TitlesToggle" to="TabBar/Setup/HBoxContainer/TitlesToggle" method="_on_toggled"]
-[connection signal="pressed" from="TabBar/Setup/HBoxContainer/InitButton" to="TabBar" method="_on_initbutton_pressed"]
+[connection signal="pressed" from="TabBar/Setup/InitButton" to="TabBar" method="_on_initbutton_pressed"]

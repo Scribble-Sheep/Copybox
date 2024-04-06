@@ -15,13 +15,12 @@ func _on_initialize(inString:String, delimiter:String)->void:
 	
 	var inStringArr
 	
-	match delimiter:
-		"":
-			inStringArr = inString.split("\n", false)
-		_:
-			inStringArr = inString.split(delimiter, false)
+	if delimiter == "":
+		inStringArr = inString.split("\n", false)
+	else:
+		inStringArr = inString.split(delimiter, false)
 	
-	if !inStringArr is Array and inStringArr.size()==0:
+	if !inStringArr is Array and inStringArr.size()==0:## Unhappy early return.
 		return
 	
 	if title_toggle.button_pressed:
@@ -49,7 +48,6 @@ func _on_initialize(inString:String, delimiter:String)->void:
 					newchild.initialize(t, s)
 				else:
 					newchild.initialize(s, t)
-			
 	else:
 		for s in inStringArr:
 			if strip_toggle.button_pressed:

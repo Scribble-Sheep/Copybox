@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://pxj46erdn668"]
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://pxj46erdn668"]
 
 [ext_resource type="StyleBox" uid="uid://cbt5wwsiulcyo" path="res://Nord_Text_Panel.tres" id="1_bet28"]
 [ext_resource type="SystemFont" uid="uid://duoi8yke4myd5" path="res://UsedFont.tres" id="1_o26fg"]
@@ -6,6 +6,10 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xjs4p"]
 content_margin_left = 8.0
+
+[sub_resource type="SystemFont" id="SystemFont_xlk0b"]
+font_names = PackedStringArray("Comic Sans MS")
+font_weight = 999
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xin8j"]
 bg_color = Color(0.560784, 0.737255, 0.733333, 1)
@@ -87,6 +91,11 @@ LineEdit/fonts/font = ExtResource("1_o26fg")
 LineEdit/styles/focus = ExtResource("1_bet28")
 LineEdit/styles/normal = ExtResource("1_bet28")
 LineEdit/styles/read_only = SubResource("StyleBoxEmpty_xjs4p")
+RichTextLabel/colors/default_color = Color(0.847059, 0.870588, 0.913725, 1)
+RichTextLabel/colors/font_outline_color = Color(0.847059, 0.870588, 0.913725, 1)
+RichTextLabel/colors/selection_color = Color(0.262745, 0.298039, 0.368627, 0.8)
+RichTextLabel/fonts/bold_font = SubResource("SystemFont_xlk0b")
+RichTextLabel/fonts/normal_font = ExtResource("1_o26fg")
 TabBar/styles/button_highlight = SubResource("StyleBoxFlat_xin8j")
 TabBar/styles/tab_selected = SubResource("StyleBoxFlat_c2n2l")
 TabContainer/fonts/font = ExtResource("1_o26fg")

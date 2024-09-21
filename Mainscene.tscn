@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckfaab762ijsb"]
+[gd_scene load_steps=7 format=3 uid="uid://ckfaab762ijsb"]
 
+[ext_resource type="Script" path="res://Mainscene.gd" id="1_1cppe"]
 [ext_resource type="Script" path="res://TabBar.gd" id="1_c0t2p"]
 [ext_resource type="Script" path="res://CopyablesBox.gd" id="1_jnc58"]
 [ext_resource type="Script" path="res://TitlesToggle.gd" id="2_8mpku"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1cppe")
 
 [node name="TabBar" type="TabContainer" parent="."]
 layout_mode = 1
